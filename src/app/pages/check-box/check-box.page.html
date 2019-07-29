@@ -1,0 +1,49 @@
+<app-header Title="Chek Box"></app-header>
+
+<ion-content>
+  
+  <ion-list>
+    <ion-item *ngFor="let value of data"
+              (click)="onClick(value)">
+
+      <ion-label>{{value.name}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="value.selected" [color]="value.color"></ion-checkbox>
+
+    </ion-item>
+  </ion-list>
+
+<div *ngIf="data[0].selected == true">
+  
+  <ion-card>
+    <ion-card-subtitle>
+      Esto va mejorando
+    </ion-card-subtitle>
+    <img src="https://statics.viralizalo.com/virs/2017/05/VIR_372812_27875_cuanto_sabes_de_los_mugiwara.jpg?cb=4845803 | async">
+    
+    <ion-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam vero sint sit, molestias inventore sed illum repudiandae commodi, debitis, explicabo dolor dolorum aliquid fuga tempora dicta alias sunt quidem. Veritatis.
+    </ion-card-content>
+    
+  </ion-card>
+
+</div>
+
+<div *ngIf="data[1].selected == true" padding>
+<ion-button (click)="alertas()">Tocar</ion-button>
+</div>
+
+  <div *ngIf="mostrar == 'NO'">
+    <ion-card>
+      <ion-card-title color="tertiary">Eres un Insecto</ion-card-title>
+      <ion-img src="https://lasimagenesdegoku.com/wp-content/uploads/2018/01/85642beb9354bbdf3878f718c6b4bf369d056495_hq-300x225.jpg"></ion-img>
+    </ion-card>    
+  </div>
+
+<div *ngIf="mostrar == 'SI'">
+  <ion-card>
+  <ion-card-title color="tertiary">Eres Tan Duro Como Mi hermano Daniel</ion-card-title>
+  <ion-img src="http://pm1.narvii.com/6195/7146b60a209c909dee094198da9a5b3d731117d5_00.jpg"></ion-img>
+  </ion-card> 
+</div>
+
+</ion-content>
